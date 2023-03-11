@@ -45,3 +45,19 @@ const first = fruits[0];
 fruits[3] = "watermelon";
 console.log(fruits);
 console.log(first);
+
+// Functions
+
+const calculateTotal = function (subTotal, tax) {
+  const total = subTotal + tax;
+  return total;
+};
+
+let result = calculateTotal(10, 20);
+console.log(result);
+
+let order1 = calculateTotal(100, 200);
+let order2 = calculateTotal(85, 95);
+let order3 = calculateTotal(85, 65);
+
+console.log(order1, order2, order3);
