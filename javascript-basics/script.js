@@ -117,3 +117,68 @@ function fullName({ firstName, lastName }) {
 
 let resultName = fullName({ lastName: "Kumar", firstName: "Prashant" });
 console.log(resultName.toUpperCase());
+
+// Callback Function
+
+function morning() {
+  console.log("hello");
+}
+
+function greet(name, cb) {
+  cb();
+  const myName = "john";
+  console.log(`${name},my name is ${myName}`);
+}
+
+greet("bobo", morning);
+
+// Array Challenges
+
+const students = [
+  { id: 1, name: "peter", score: 80, favouriteSub: "maths" },
+  { id: 1, name: "bob", score: 70, favouriteSub: "english" },
+  { id: 1, name: "maria", score: 85, favouriteSub: "hindi" },
+  { id: 1, name: "susan", score: 90, favouriteSub: "science" },
+  { id: 1, name: "gopal", score: 60, favouriteSub: "history" },
+];
+
+console.log(students);
+
+// map
+
+const updatedStudents = students.map(function (student) {
+  student.role = "student";
+  return student;
+});
+
+console.log(updatedStudents);
+
+// filter
+
+const highScores = students.filter(function (student) {
+  // if (student.score >= 80) {
+  //   return student;
+  // }
+
+  return student.score >= 80;
+});
+
+console.log(highScores);
+
+// find
+
+const specificId = students.find(function (student) {
+  return student.id === 1;
+});
+
+console.log(specificId);
+
+// reduce
+
+const averageScore = students.reduce(function (scoresTotal, student) {
+  return scoresTotal + student.score;
+}, 0);
+
+console.log(averageScore);
+
+//
